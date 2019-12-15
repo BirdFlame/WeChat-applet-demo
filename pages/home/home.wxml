@@ -5,3 +5,7 @@
 <view>当前计数：{{count}}</view>
 <button bindtap='add' size="mini">增加</button>
 <button bindtap='sub' size="mini">减少</button>
+<button bindgetuserinfo="btnGetUserInfo" open-type="getUserInfo">
+  获取授权</button>
+  <!-- <open-data type="userAvatarUrl"></open-data>  -->
+  <view wx:for="{{list}}">{{item.title}}</view>

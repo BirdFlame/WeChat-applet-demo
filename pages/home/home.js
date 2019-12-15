@@ -28,29 +28,25 @@ Page({
         age: 4
       }
     ],
-    count: 0
-  },
-  add() {
-    //界面不会刷新
-    //  this.data.count+=1
-    //双向绑定
-    this.setData({
-      count: this.data.count +1
-    })
-  },
-  sub() {
-    //界面不会刷新
-    //  this.data.count+=1
-    //双向绑定
-    this.setData({
-      count: this.data.count - 1
-    })
+    count: 0,
+    list:[]
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function(options) {
+    wx.request({
+      url: 'http://106.54.54.237:8000/api/v1/recommend',
+      success:(res)=>{
+        console.log(res)
+        let data=res.data.data.list
+        this.setData({
+          list:data
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -99,5 +95,37 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  //-----------其他事件------------
+  add() {
+    //界面不会刷新
+    //  this.data.count+=1
+    //双向绑定
+    this.setData({
+      count: this.data.count + 1
+    })
+  },
+  sub() {
+    //界面不会刷新
+    //  this.data.count+=1
+    //双向绑定
+    this.setData({
+      count: this.data.count - 1
+    })
+  },
+  btnGetUserInfo(event) {
+    // console.log(event)
+  },
+  //监听页面滚动
+  onPageScroll(obj) {
+    // console.log(obj)
+  },
+  //监听页面滚动到底部
+  onReachBottom() {
+    console.log("已经滚到底部了")
+  },
+  //下拉刷新
+  onPullDownRefresh(){
+    console.log('下拉刷新')
   }
 })
