@@ -1,3 +1,7 @@
 <!--pages/home/home.wxml-->
-<text>hello word</text>
-<button size="mini">按钮</button>
+<view>Hello {{name}}</view>
+<view>年龄：{{age}}</view>
+<view wx:for="{{students}}" wx:key="key">姓名：{{item.name}}-年龄：{{item.age}}</view>
+<view>当前计数：{{count}}</view>
+<button bindtap='add' size="mini">增加</button>
+<button bindtap='sub' size="mini">减少</button>
