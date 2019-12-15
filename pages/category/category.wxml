@@ -1,2 +1,4 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<image src="{{imagePath}}"/>
+<image src="/assets/tabbar/cart.png" show-menu-by-longpress></image>
+<button bindtap="handleChooseAlbum">按钮</button>

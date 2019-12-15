@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      imagePath:''
   },
 
   /**
@@ -62,5 +62,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //---------其他事件--------
+  handleChooseAlbum(){
+    //系统APi，让用户在相册选择图片或者拍照
+    wx.chooseImage({
+      success:(res) =>{
+        console.log(res)
+        const path=res.tempFilePaths[0]
+        this.setData({
+          imagePath :path
+        })
+      },
+    })
   }
 })
