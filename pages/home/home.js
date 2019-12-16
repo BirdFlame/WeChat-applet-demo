@@ -39,7 +39,7 @@ Page({
     wx.request({
       url: 'http://106.54.54.237:8000/api/v1/recommend',
       success:(res)=>{
-        console.log(res)
+        // console.log(res)
         let data=res.data.data.list
         this.setData({
           list:data
@@ -127,5 +127,8 @@ Page({
   //下拉刷新
   onPullDownRefresh(){
     console.log('下拉刷新')
+  },
+  tabclick(event){
+    console.log(event)
   }
 })

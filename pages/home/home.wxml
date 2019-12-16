@@ -8,4 +8,4 @@
 <button bindgetuserinfo="btnGetUserInfo" open-type="getUserInfo">
   获取授权</button>
   <!-- <open-data type="userAvatarUrl"></open-data>  -->
-  <view wx:for="{{list}}">{{item.title}}</view>
+<tabbar titles="{{['推荐','新款','流行']}}" bind:itemclick="tabclick"></tabbar>
